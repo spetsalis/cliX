@@ -1,0 +1,107 @@
+# **Alias Command Manager - User Guide & License**
+
+## **📌 Overview**
+This application helps you manage and execute terminal aliases/commands from a graphical interface. It stores aliases in a text file (`aliases_commands.txt`) and allows filtering, sorting, and execution with a double-click.
+
+YOU HAVE TO excute this application FROM THE TERMINAL 
+(e.g. $_> ./CLIx)
+---
+
+## **🚀 Features**
+✔ **Add/Edit/Delete** aliases  
+✔ **Execute commands** (including `sudo` with password prompt)  
+✔ **Filter & Sort** aliases  
+✔ **Theme customization** (dark/light modes)  
+✔ **Persistent storage** (saves aliases to a file)  
+
+---
+
+## **📋 Installation & Usage**
+### **1. Prerequisites**
+- Python 3.6+
+- Required packages:  
+  ```bash
+  pip install tkinter ttkbootstrap pillow
+  ```
+
+### **2. Running the Application**
+```bash
+python alias_manager.py
+```
+
+### **3. How to Use**
+| **Action** | **Steps** |
+|------------|-----------|
+| **Add Alias** | Click **"Add Alias Command"** → Enter alias & command |
+| **Edit Alias** | Select alias → Click **"Edit Alias Command"** → Modify |
+| **Delete Alias** | Select alias → Click **"Delete Alias Command"** |
+| **Execute Command** | Double-click an alias |
+| **Filter Aliases** | Type in the filter box → Click **"Filter"** |
+| **Sort Aliases** | Click the **"Alias"** column header |
+| **Change Theme** | Select a theme from the dropdown |
+
+### **4. Sudo Commands**
+- If a command starts with `sudo`, you'll be prompted for a password.  
+- The password is **not stored** and is used only for execution.  
+
+---
+
+## **⚙️ Customization**
+### **Themes**
+- Change the theme via the dropdown (e.g., `cosmo`, `cyborg`, `darkly`).  
+- Default: `cosmo` (light), but starts in `cyborg` (dark).  
+
+### **Scrollbar Style**
+- The scrollbar uses a **black thumb** (`#000000`) and **gray track** (`#888888`).  
+- Modify `style.configure()` in the code to adjust colors.  
+
+---
+
+## **📜 License (GNU GPLv3)**
+```text
+Alias Command Manager - A GUI tool for managing terminal aliases.
+Copyright (C) 2023 Spyros Petsalis & Deepseek
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+```
+
+### **Key GNU GPLv3 Terms**
+✅ **Free to use, modify, and distribute**  
+✅ **Must disclose source code if redistributed**  
+✅ **No warranty - use at your own risk**  
+
+---
+
+## **💡 Troubleshooting**
+❌ **`PIL._tkinter_finder` Error?**  
+   → Reinstall Pillow:  
+   ```bash
+   pip install --upgrade pillow
+   ```
+   → If using PyInstaller, include hidden imports:  
+   ```bash
+   pyinstaller --hidden-import=PIL._tkinter_finder --hidden-import=PIL.ImageTk alias_manager.py
+   ```
+
+❌ **Aliases not saving?**  
+   → Check file permissions for `aliases_commands.txt`.  
+
+---
+
+## **🎉 Final Notes**
+- The app stores aliases in `aliases_commands.txt` (same directory as the script).  
+- For security, avoid storing sensitive commands (e.g., passwords in plaintext).  
+- Contributions welcome under **GNU GPLv3**!  
+
+Enjoy managing your aliases efficiently! 🚀
